@@ -9,7 +9,7 @@ const knex = require('../connection')
 * @return {Array<Object>} Массив уроков из базы данных.
 * */
 function getLessons(page = 0, lessonsPerPage = 5) {
-    if (page === 0) {
+    if (page !== 0) {
         return knex('lessons')
             .select('*')
             .offset((page - 1) * lessonsPerPage)

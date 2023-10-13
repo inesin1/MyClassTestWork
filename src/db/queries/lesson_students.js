@@ -7,12 +7,12 @@ const knex = require('../connection')
 *
 * @return {Object, undefined} Найденная связка или undefined, если не найдена.
 * */
-function getStudentsByLesson(lessonId) {
+function getLessonStudentsByLessonId(lessonId) {
     return knex('lesson_students')
         .select('*')
         .where('lesson_id', lessonId);
 }
 
 module.exports = {
-    getStudentsByLesson: getStudentsByLesson
+    getLessonStudentsByLessonId: getLessonStudentsByLessonId
 }

@@ -1,11 +1,11 @@
 const knex = require('../connection')
 
 /*
-* Возвращает связку учителей и занятий по id занятия.
+* Возвращает связки учителей и занятий по id занятия.
 *
 * @param {number} lessonId id занятия.
 *
-* @return {Object, undefined} Найденная связка или undefined, если не найдена.
+* @return {Array<Object>, undefined} Найденные связки или undefined, если не найдена.
 * */
 function getLessonTeachersByLessonId(lessonId) {
     return knex('lesson_teachers')
@@ -14,7 +14,7 @@ function getLessonTeachersByLessonId(lessonId) {
 }
 
 /*
-* Создает связку учителя и занятия.
+* Создает связки учителей и занятий.
 *
 * @param {Object, Array<Object>} lessonTeachers Связка или массив связок учителей и занятий.
 *
